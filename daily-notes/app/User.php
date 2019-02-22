@@ -27,4 +27,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function total_spent(){
+    	return $this->belongsToMany('App\TotalSpents','total_spent_users');
+    }
+    public function activity(){
+    	return $this->belongsToMany('App\Activity','activitiy_users');
+    }
 }
